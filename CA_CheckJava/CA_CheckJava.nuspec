@@ -7,7 +7,7 @@
     <owners>David Bernhard</owners>
     <description>WiX Custom Action to check if Java is installed</description>
     <releaseNotes>Initial Release</releaseNotes>
-    <copyright>Copyright Guntram Meusburger GmbH 2018</copyright>
+    <copyright>Copyright Guntram Meusburger GmbH 2019</copyright>
   </metadata>
 
   <files>
