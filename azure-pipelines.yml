@@ -41,4 +41,9 @@ steps:
     command: pack
     packagesToPack: CA_CheckJava/CA_CheckJava.nuspec
     buildProperties: "version=$(GitVersion.NuGetVersion)"
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'CA_CheckJava'
     
