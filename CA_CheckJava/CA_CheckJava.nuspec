@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>CA_CheckJava</id>
+    <version>$version$</version>
+    <authors>David Bernhard</authors>
+    <owners>David Bernhard</owners>
+    <description>WiX Custom Action to check if Java is installed</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright Guntram Meusburger GmbH 2018</copyright>
+  </metadata>
+
+  <files>
+    <file src="bin/Release/CA_CheckJava.CA.dll" target="lib/net45" />
+    <file src="CustomAction.config" target="lib" />
+  </files>
+</package>

@@ -1,0 +1,20 @@
+branches:
+  bugfix:
+    mode: ContinuousDeployment
+    tag: bugfix-{BranchName}
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+  develop:
+    tag: dev
+  feature[/-]:
+    mode: ContinuousDeployment
+    tag: feature-{BranchName}
+    increment: Inherit
+  hotfix:
+    mode: ContinuousDeployment
+    tag: hotfix
+  release[/-]:
+    mode: ContinuousDeployment
+    tag: rc
+    increment: Inherit

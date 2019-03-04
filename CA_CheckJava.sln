@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA_CheckJava", "CA_CheckJava\CA_CheckJava.csproj", "{E0C471F8-C121-4465-8270-C9BB2CF55C18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8BF2B245-19BC-4501-A50E-89FEB9ABCA20}"
+	ProjectSection(SolutionItems) = preProject
+		azure-pipelines.yml = azure-pipelines.yml
+		GitVersion.yml = GitVersion.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Debug|x64.ActiveCfg = Debug|x64
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Debug|x64.Build.0 = Debug|x64
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Debug|x86.ActiveCfg = Debug|x86
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Debug|x86.Build.0 = Debug|x86
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Release|x64.ActiveCfg = Release|x64
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Release|x64.Build.0 = Release|x64
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Release|x86.ActiveCfg = Release|x86
+		{E0C471F8-C121-4465-8270-C9BB2CF55C18}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A9E82AA-B642-4953-8F01-7430A7FA5706}
+	EndGlobalSection
+EndGlobal
