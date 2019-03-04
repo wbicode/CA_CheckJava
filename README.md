@@ -8,9 +8,11 @@ The Platform will be stored in the Property "JRE_INSTALLED" ("32bit" or "64bit")
 
 Include the built **CA_CheckJava.CA.dll** from this project in your own project or use the published nuget (defined in CA_CheckJava/CA_CheckJava.nuspec). 
 
-Reference the .dll in your .wxs like so:
+Reference the .dll in your .wxs file like so:
 
-`<Binary Id="CA_CheckJava" SourceFile="pathToNugetPackages/CA_CheckJava.CA.dll" />`
+`<Binary Id="CA_CheckJava" SourceFile="pathToNugetPackages/CA_DirectoryChooser.X.X.X/lib/net45/CA_CheckJava.CA.dll" />`
+
+* "pathToNugetPackages" could be $(var.SolutionDir)/packages
 
 And now you can create your CustomAction: 
 
