@@ -13,6 +13,8 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@0
+  inputs:
+    versionSpec: '4.3.0' 
 
 - task: NuGetCommand@2
   displayName: 'Restore solution'
