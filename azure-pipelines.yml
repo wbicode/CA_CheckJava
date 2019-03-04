@@ -8,8 +8,8 @@ pool:
 
 variables:
   solution: '**/*.sln'
-
-# variables needed: buildConfiguration, buildPlatform and publishVstsFeed
+  buildConfiguration: Release
+  buildPlatform: x64
 
 steps:
 - task: NuGetToolInstaller@0
@@ -42,8 +42,3 @@ steps:
     packagesToPack: CA_CheckJava/CA_CheckJava.nuspec
     buildProperties: "version=$(GitVersion.NuGetVersion)"
     
-- task: NuGetCommand@2
-  displayName: 'NuGet publish'
-  inputs:
-    command: push
-    publishVstsFeed: $(publishVstsFeed)
