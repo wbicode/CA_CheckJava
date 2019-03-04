@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("WiX Custom Action to check if Java is installed")]
 [assembly: AssemblyCompany("Meusburger Guntram GmbH")]
 [assembly: AssemblyProduct("CA_CheckJava")]
-[assembly: AssemblyCopyright("Copyright © Meusburger Guntram GmbH 2018")]
+[assembly: AssemblyCopyright("Copyright © Meusburger Guntram GmbH 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
