@@ -8,6 +8,7 @@
     <description>WiX Custom Action to check if Java is installed (and in which bitness)</description>
     <releaseNotes>Initial Release</releaseNotes>
     <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/wbicode/CA_CheckJava</projectUrl>
     <copyright>Copyright Guntram Meusburger GmbH 2019</copyright>
   </metadata>
 
