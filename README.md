@@ -18,7 +18,7 @@ And now you can create your CustomAction:
 
 `<CustomAction Id="CheckJREInstalled" BinaryKey="CA_CheckJava" DllEntry="CheckJREInstalled" Execute="immediate" />`
 
-After this Action the Property JRE_INSTALLED contains either "64bit" or "32bit" or "0" if no java installation is found. <br />
+After this Action the Property JRE_INSTALLED contains either "64bit" or "32bit" or "0" if no Java installation is found. <br />
 
 If both platforms are installed "64bit" is returned.
 
