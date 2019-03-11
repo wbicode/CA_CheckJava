@@ -6,7 +6,7 @@ The Platform will be stored in the Property "JRE_INSTALLED" ("32bit" or "64bit")
 
 ## Usage
 
-Include the built **CA_CheckJava.CA.dll** from this project in your own project or use the published nuget (defined in CA_CheckJava/CA_CheckJava.nuspec). 
+Include the built **CA_CheckJava.CA.dll** from this project in your own project or use the [published nuget](https://www.nuget.org/packages/CA_CheckJava/) (defined in CA_CheckJava/CA_CheckJava.nuspec). 
 
 Reference the .dll in your .wxs file like so:
 
