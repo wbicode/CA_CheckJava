@@ -1,10 +1,14 @@
 using Microsoft.Deployment.WindowsInstaller;
 using Microsoft.Win32;
+using System;
+using System.IO;
 
 namespace CA_CheckJava
 {
     public class CustomActions
     {
+        private const string CA_JRE_INSTALLED = "JRE_INSTALLED";
+
         /// <summary>
         /// This action checks if a Oracle JRE or OpenJDK is present on the machine and writes it into the
         /// JRE_INSTALLED Property
@@ -32,18 +36,24 @@ namespace CA_CheckJava
             bool javaJRE64bit = ExistsRegDir(javaJRE64bitPath, true);
             bool javaJDK64bit = ExistsRegDir(javaJDK64bitPath, true);
 
-            if (javaJRE64bit || javaJDK64bit)
+            // get the JAVA_HOME environment variable
+            string ENV_JavaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
+
+            if (ExistsDir(ENV_JavaHome))
             {
-                xiSession["JRE_INSTALLED"] = "64bit";
+                xiSession[CA_JRE_INSTALLED] = ENV_JavaHome.Contains("x86") ? "32bit" : "64bit";
+            } else if (javaJRE64bit || javaJDK64bit)
+            {
+                xiSession[CA_JRE_INSTALLED] = "64bit";
             } else if (javaJRE32bit || javaJDK32bit)
             {
-                xiSession["JRE_INSTALLED"] = "32bit";
+                xiSession[CA_JRE_INSTALLED] = "32bit";
             } else
             {
-                xiSession["JRE_INSTALLED"] = "0";
+                xiSession[CA_JRE_INSTALLED] = "0";
             }
 
-            xiSession.Log("JRE_INSTALLED set to: " + xiSession["JRE_INSTALLED"]);
+            xiSession.Log(CA_JRE_INSTALLED + " set to: " + xiSession[CA_JRE_INSTALLED]);
 
             return ActionResult.Success;
         }
@@ -52,6 +62,11 @@ namespace CA_CheckJava
         {
             var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, (is64Bit ? RegistryView.Registry64 : RegistryView.Registry32));
             return hklm.OpenSubKey(directory) != null;
+        }
+
+        private static bool ExistsDir(string directory)
+        {
+            return Directory.Exists(directory);
         }
     }
 }
