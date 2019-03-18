@@ -1,5 +1,7 @@
 using Microsoft.Deployment.WindowsInstaller;
 using Microsoft.Win32;
+using System;
+using System.IO;
 
 namespace CA_CheckJava
 {
@@ -34,7 +36,13 @@ namespace CA_CheckJava
             bool javaJRE64bit = ExistsRegDir(javaJRE64bitPath, true);
             bool javaJDK64bit = ExistsRegDir(javaJDK64bitPath, true);
 
-            if (javaJRE64bit || javaJDK64bit)
+            // get the JAVA_HOME environment variable
+            string ENV_JavaHome = Environment.GetEnvironmentVariable("JAVA_HOME");
+
+            if (ExistsDir(ENV_JavaHome))
+            {
+                xiSession[CA_JRE_INSTALLED] = ENV_JavaHome.Contains("x86") ? "32bit" : "64bit";
+            } else if (javaJRE64bit || javaJDK64bit)
             {
                 xiSession[CA_JRE_INSTALLED] = "64bit";
             } else if (javaJRE32bit || javaJDK32bit)
@@ -54,6 +62,11 @@ namespace CA_CheckJava
         {
             var hklm = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, (is64Bit ? RegistryView.Registry64 : RegistryView.Registry32));
             return hklm.OpenSubKey(directory) != null;
+        }
+
+        private static bool ExistsDir(string directory)
+        {
+            return Directory.Exists(directory);
         }
     }
 }
