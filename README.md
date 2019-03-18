@@ -1,8 +1,12 @@
 ﻿# Custom Action - Check Java
 
-This WiX Custom Action enables it to check if Java is installed and find out its Platform (x86 or x64). This is achieved by checking the registry (and not the environment variable JAVA_HOME). <br />
+This WiX Custom Action enables it to check if Java is installed and find out its Platform (x86 or x64). 
 
 The Platform will be stored in the Property "JRE_INSTALLED" ("32bit" or "64bit") and if no installation is found it's set to "0".
+
+## Java Detection
+
+First the environment variable %JAVA_HOME% is checked. Afterwards the registry gets checked (WIP: ensure the directories exist; currently figuring out some possibilities of registry keys (OracleJRE and OpenJDK))
 
 ## Usage
 
@@ -22,7 +26,4 @@ And now you can create your CustomAction:
 <CustomAction Id="CheckJREInstalled" BinaryKey="CA_CheckJava" DllEntry="CheckJREInstalled" Execute="immediate" />
 ```
 
-After this Action the Property JRE_INSTALLED contains either "64bit" or "32bit" or "0" if no Java installation is found. <br />
-
-If both platforms are installed "64bit" is returned.
-
+After this Action the Property JRE_INSTALLED contains either "64bit" or "32bit" or "0" if no Java installation is found.
