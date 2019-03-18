@@ -5,6 +5,8 @@ namespace CA_CheckJava
 {
     public class CustomActions
     {
+        private const string CA_JRE_INSTALLED = "JRE_INSTALLED";
+
         /// <summary>
         /// This action checks if a Oracle JRE or OpenJDK is present on the machine and writes it into the
         /// JRE_INSTALLED Property
@@ -34,16 +36,16 @@ namespace CA_CheckJava
 
             if (javaJRE64bit || javaJDK64bit)
             {
-                xiSession["JRE_INSTALLED"] = "64bit";
+                xiSession[CA_JRE_INSTALLED] = "64bit";
             } else if (javaJRE32bit || javaJDK32bit)
             {
-                xiSession["JRE_INSTALLED"] = "32bit";
+                xiSession[CA_JRE_INSTALLED] = "32bit";
             } else
             {
-                xiSession["JRE_INSTALLED"] = "0";
+                xiSession[CA_JRE_INSTALLED] = "0";
             }
 
-            xiSession.Log("JRE_INSTALLED set to: " + xiSession["JRE_INSTALLED"]);
+            xiSession.Log(CA_JRE_INSTALLED + " set to: " + xiSession[CA_JRE_INSTALLED]);
 
             return ActionResult.Success;
         }
